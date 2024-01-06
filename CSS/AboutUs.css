@@ -1,0 +1,130 @@
+  /*SocietyWorkImage animation*/
+.scoietyWork1{
+  border-radius: 50px;
+  border:2px;
+  box-shadow: 0px 5px 5px 2px bisque;
+  -webkit-animation: float 4s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
+}
+
+.scoietyWork2{
+    border-radius: 50px;
+    border:2px;
+    box-shadow: 0px 5px 5px 2px bisque;
+    -webkit-animation: float 4s ease-in-out 2s infinite;
+    animation: float 4s ease-in-out 2s infinite;
+  }
+
+.scoietyWork3{
+    border-radius: 50px;
+    border:2px;
+    box-shadow: 0px 5px 5px 2px bisque;
+    -webkit-animation: float 4s ease-in-out infinite;
+    animation: float 4s ease-in-out infinite;
+  }
+
+@-webkit-keyframes float {
+    0% {
+      box-shadow: 0 5px 25px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px);
+    }
+    50% {
+      box-shadow: 0px 5px 25px 2px bisque;
+      transform: translatey(-20px);
+    }
+    100% {
+      box-shadow: 0 5px 25px 0px rgba(26, 34, 182, 0.6);
+      transform: translatey(0px);
+    }
+  }
+
+  /*SocietyBackGroundImage animation*/
+  .SocietyBackGroundI{
+    border-radius: 50px;
+    border:2px;
+    transform: translatex(-500);
+    box-shadow: 0px 5px 5px 2px bisque;
+    -webkit-animation: puff-in-center 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	        animation: puff-in-center 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    
+  }
+
+  @-webkit-keyframes puff-in-center {
+    0% {
+      -webkit-transform: scale(2);
+              transform: scale(2);
+      -webkit-filter: blur(4px);
+              filter: blur(4px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes puff-in-center {
+    0% {
+      -webkit-transform: scale(2);
+              transform: scale(2);
+      -webkit-filter: blur(4px);
+              filter: blur(4px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+
+
+/*Animate Text*/
+.SocietyBackGroundT{
+  -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*Background for soceity*/
+.SocietyBackGround{background-color: #8EC5FC;
+background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+}
+/*Background for Sceity Work*/
+.SocietyWork{
+  background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+  
+
+}
+
+/*Baclground for footer*/
+.footer{
+}

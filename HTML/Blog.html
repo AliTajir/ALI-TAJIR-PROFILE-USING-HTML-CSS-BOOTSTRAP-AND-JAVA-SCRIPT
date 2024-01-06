@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Meta Tags-->
+    <meta charset="UTF-8">
+    <!--Links to Style Sheet-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!--Link to css files-->
+    <link href="../CSS/navStyle.css" rel="styleSheet"></link>
+    <link href="../CSS/footerStyle.css" rel="styleSheet"></link>
+    <link href="../CSS/VisionStyle.css" rel="styleSheet"></link>
+    <link href="../CSS/Mission.css" rel="styleSheet"></link>
+    <link href="../CSS/Name.css" rel="stylesheet"></link>
+    <link href="../CSS/slideShowStyle.css" rel="styleSheet"></link>
+    <!--For NavBar-->
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/navbars/">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--For Mission-->
+    
+    <!--Footer Link for styleing-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <!--Title and Logo-->
+    <title>Blockchain</title>
+    <link rel = "icon" class="rounded-4" href ="../Pictures/logo.jpg" type = "image/x-icon">
+    <style>
+      /* Additional styles for the sticky navbar and name section */
+      body {
+          padding-top: 0px; /* Adjust based on the height of your navbar */
+          background-color: black;
+          margin: 0;
+      }
+
+      .navbar.sticky-nav {
+          position: fixed;
+          top: 0;
+          width: 100%;
+          z-index: 1000;
+          animation: slideDown 0.5s;
+      }
+
+
+
+      @keyframes slideDown {
+          from {
+              transform: translateY(-100%);
+          }
+
+          to {
+              transform: translateY(0);
+          }
+      }
+  </style>
+
+  <script>
+      // Add this script to make the navbar and name section sticky
+      $(document).ready(function () {
+  
+          var navbar = $(".navbar");
+          var sticky = navbar.offset().top;
+
+          $(window).scroll(function () {
+              if (window.pageYOffset >= sticky) {
+
+                  navbar.addClass("sticky-nav");
+              } else {
+
+                  navbar.removeClass("sticky-nav");
+              }
+          });
+      });
+  </script>
+</head>
+<body>
+
+<!-- JavaScript Link to assets folder and access sources -->
+<script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+
+<!-- For Animation - Choose one of the AOS script links, not both -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<!-- OR -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+// Initialize AOS when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function () {
+  AOS.init();
+});
+
+</script>
+
+
+
+
+
+<!--Name-->
+<section class="name">
+  <div class="feature col bg-gradient rounded-3">
+       <h1 class="text-lg-left" >Ali Tajir</h1>
+   </div>
+</div>
+</section> 
+<!--NavBar-->
+<nav class="navbar navbar-expand-lg nav-color" aria-label="Fourth navbar example">
+<div class="container-fluid">
+<!-- <div class="col-auto mr-4 rounded-4 logo">
+<img src="./Pictures/logo.jpg" data-aos="zoom-in" class='rounded-4 imgL' width="150px" >
+</div> -->
+<button class="navbar-toggler  buttonNC mr-5" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarsExample04">
+<ul class="menuItems nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+  <li><a class="nav-link mb-1 px-2 text-secondary btnN btnN-white btnN-animate" onclick="IndexPage()">
+      <span>
+          <img src="../Pictures/icons8-home-page-64.png" height="20px"/>
+      </span>Home</a></li>
+  <li><a class="nav-link mb-1 px-2 text-secondary btnN btnN-white btnN-animate" onclick="EventPage()">
+      <span>
+          <img src="../Pictures/icons8-event-accepted-64.png" height="20px"/>
+      </span>Projects</a></li>
+  <li><a class="nav-link mb-1 px-2 text-secondary btnN btnN-white btnN-animate" onclick="BlogPage()">
+      <span>
+          <img src="../Pictures/icons8-google-blog-search-64.png" height="20px"/>
+      </span>Blog</a>
+  </li>
+
+</ul>
+
+
+<div class="text-end">
+  <ul class="menuItems nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+    <li><a class="nav-link px-2 text-secondary btnN btnN-white btnN-animate" onclick="AboutUsPage()">
+      <span>
+          <img src="../Pictures/icons8-about-64.png" height="20px"/>
+      </span>About Me</a></li>
+    <li><a class="nav-link px-2 text-secondary btnN btnN-white btnN-animate" onclick="TeamPage()">
+      <span>
+          <img src="../Pictures/icons8-team-64.png" height="20px"/>
+      </span>My Art</a></li>
+  </ul>
+</div>
+</div>
+</div>
+</nav>
+
+
+
+
+<!--Slide Show-->
+  <hr class="lineH">
+  <main>
+     <section class="SocietyBackGround">
+        <div class="container px-7 py-5 text-center" >
+            <h1 padding="50px" class="aboutUsH">About Us</h1>
+            <div class="row g-4 py-5 row-cols-1 row-cols-md-2 row-cols-lg-2">
+                <div class="feature col-lg-4">
+                  <img src="../Pictures/logo.jpg" style="height: 200px;">
+                </div>
+                <div class="feature col">
+                  <h3 class="text-lg-left">Personalized Experience</h3>
+                  <p style="text-align:left;">Customers expect companies to understand their unique tastes and preferences and engage them as individuals rather than customer types or segments.</p>
+                </div>
+            </div>
+        </div>
+     </section> 
+     <section class="SocietyWork">
+        <div class="container px-4 py-5 text-center">
+
+             <!--Workof Scoiety-->
+             <div class="row g-4 py-5 row-cols-1 row-cols-md-2 row-cols-lg-3">
+                <div class="feature col">
+                 <div class="feature d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
+                   <img src="../Pictures/logo.jpg" style="width:50%;height:100%">
+                 </div>
+                  <h3>Sharing</h3>
+                   <p>You need permission to use a logo unless it is for editorial or information purposes.</p>
+                 
+                </div>          
+                <div class="feature col">
+                  <div class="feature d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
+                    <img src="../Pictures/logo.jpg" style="width:50%;height:100%">
+                  </div>
+                    <h3>Interactive</h3>
+                    <p>Responsive logos are shape-shifting logos that change in size, complexity or even color to accommodate and adapt to wherever they are placed</p>
+                </div>
+                <div class="feature col">
+                  <div class="feature d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
+                    <img src="../Pictures/logo.jpg" style="width:50%;height:100%">
+                  </div>
+                    <h3>Smart Taging</h3>
+                    <p>A logo label is a branding label created by using your own company logo, design, motto or artwork</p>
+                  
+                </div>
+             </div>
+          </div>
+    
+     </section>
+   </main>
+<!-- Footer -->
+<footer class="footer container-fluid">
+  <div class="space">
+      <h1 class="text-lg" >Social Media</h1>
+      <h1 class="text-lg" >Contact Information</h1>
+  </div>
+    <hr class="lineF">
+    <section class="pr-lg-4" style="height: 120px;">
+      <div class="container"> 
+          <div class="row row-cols-1 row-cols-lg-6 row-cols-md-2
+          row-cols-sm-2 iconsFooter pl-2">
+          <div class="col fa">
+          <a href="#" class="mb-3">
+             <div class="layer">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="fab fa-facebook-f"></span>
+             </div>
+             <div class="text">
+                Facebook
+             </div>
+          </a>
+          </div>
+          <div class="col tw">
+          <a href="#" class="mb-3">
+             <div class="layer">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="fab fa-twitter"></span>
+             </div>
+             <div class="text">
+                Twitter
+             </div>
+          </a>
+          </div>
+          <div class="col inst">
+          <a href="#" class="mb-3">
+             <div class="layer">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="fab fa-instagram"></span>
+             </div>
+             <div class="text">
+                Instagram
+             </div>
+          </a>
+          </div>
+          <div class="col li">
+          <a href="https://www.linkedin.com/in/ali-tajir-a464891b8/" class="mb-3">
+             <div class="layer">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="fab fa-linkedin-in"></span>
+             </div>
+             <div class="text">
+                Linkedin
+             </div>
+          </a>
+          </div>
+          <div class="col em">
+          <a href="#" class="mb-3">
+           <div class="layer">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span class="fab fa fa-envelope"></span>
+           </div>
+           <div class="text">
+              Email
+           </div>
+          </a>
+          </div>                    
+          <div class="col git">
+              <a href="https://github.com/AliTajir" class="mb-3">
+                  <div class="layer">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span class="fab fa-github"></span>
+                  </div>
+                  <div class="text">
+                      GitHub
+                  </div>
+              </a>
+          </div>
+          
+               
+        </div>
+       </div>
+
+   </section>
+  </footer>
+
+    <!--JavaScript Link to assests folder and access scoucres-->
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function IndexPage(){location.replace("../index.html")}
+      function EventPage(){location.replace("./Event.html")}
+      function BlogPage(){location.replace("./Blog.html")}
+      function AboutUsPage(){location.replace("./AboutUs.html")}
+      function TeamPage(){location.replace("./Team.html")}
+    </script>
+    
+</body>
+</html>
