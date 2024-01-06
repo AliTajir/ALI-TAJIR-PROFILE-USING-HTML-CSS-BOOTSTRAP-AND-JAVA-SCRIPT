@@ -1,4 +1,19 @@
+.banner {
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
 
+.banner h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.banner p {
+  font-size: 1.2em;
+  margin: 0;
+}
 /*Background for Event*/
 .Event1{
     background-color: #d4bbd4;

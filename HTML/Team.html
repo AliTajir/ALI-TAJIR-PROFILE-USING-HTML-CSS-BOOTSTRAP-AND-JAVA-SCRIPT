@@ -17,6 +17,7 @@
     <link href="../CSS/Mission.css" rel="styleSheet"></link>
     <link href="../CSS/Name.css" rel="stylesheet"></link>
     <link href="../CSS/slideShowStyle.css" rel="styleSheet"></link>
+    <link href="../CSS/Myart.css" rel="styleSheet"></link>
     <!--For NavBar-->
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/navbars/">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -25,7 +26,7 @@
     <!--Footer Link for styleing-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <!--Title and Logo-->
-    <title>Blockchain</title>
+    <title>Ali Tajir Profile</title>
     <link rel = "icon" class="rounded-4" href ="../Pictures/logo.jpg" type = "image/x-icon">
 
     <style>
@@ -55,6 +56,14 @@
               transform: translateY(0);
           }
       }
+
+    
+
+    
+
+    
+
+
   </style>
 
   <script>
@@ -86,6 +95,14 @@
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <!-- OR -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<!-- script for displaying the entire image  -->
+ <!-- Lightbox2 CSS -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css">
+ <!-- jQuery (required for Lightbox2) -->
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <!-- Lightbox2 JavaScript -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+
 
 <script>
 // Initialize AOS when the DOM is fully loaded
@@ -154,55 +171,96 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-  <hr class="lineH">
+
   <main>
+    <!-- ART gallery -->
      <section class="SocietyBackGround">
         <div class="container px-7 py-5 text-center" >
-            <h1 padding="50px" class="aboutUsH">About Us</h1>
-            <div class="row g-4 py-5 row-cols-1 row-cols-md-2 row-cols-lg-2">
-                <div class="feature col-lg-4">
-                  <img src="../Pictures/logo.jpg" style="height: 200px;">
-                </div>
-                <div class="feature col">
-                  <h3 class="text-lg-left">Personalized Experience</h3>
-                  <p style="text-align:left;">Customers expect companies to understand their unique tastes and preferences and engage them as individuals rather than customer types or segments.</p>
+            <h1 padding="50px" class="aboutUsH">About My ART</h1>
+                <div>
+                  <br>
+                    <h1 class="text-lg-left" data-aos="fade-right-up">Personalized Experience</h1>
+                    <h3 style="text-align:left;">Customers expect companies to understand their unique tastes and preferences and engage them as individuals rather than customer types or segments.</h3>
+                    <br>
+                    <h1 class="text-lg-left" data-aos="fade-right-up">Personalized Experience</h1>
+                    <h3 style="text-align:left;">Customers expect companies to understand their unique tastes and preferences and engage them as individuals rather than customer types or segments.</h3>
                 </div>
             </div>
         </div>
      </section> 
-     <section class="SocietyWork">
-        <div class="container px-4 py-5 text-center">
+     <br>
+     <br>
+     <br>
 
-             <!--Workof Scoiety-->
-             <div class="row g-4 py-5 row-cols-1 row-cols-md-2 row-cols-lg-3">
-                <div class="feature col">
-                 <div class="feature d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
-                   <img src="../Pictures/logo.jpg" style="width:50%;height:100%">
-                 </div>
-                  <h3>Sharing</h3>
-                   <p>You need permission to use a logo unless it is for editorial or information purposes.</p>
-                 
-                </div>          
-                <div class="feature col">
-                  <div class="feature d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
-                    <img src="../Pictures/logo.jpg" style="width:50%;height:100%">
-                  </div>
-                    <h3>Interactive</h3>
-                    <p>Responsive logos are shape-shifting logos that change in size, complexity or even color to accommodate and adapt to wherever they are placed</p>
-                </div>
-                <div class="feature col">
-                  <div class="feature d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
-                    <img src="../Pictures/logo.jpg" style="width:50%;height:100%">
-                  </div>
-                    <h3>Smart Taging</h3>
-                    <p>A logo label is a branding label created by using your own company logo, design, motto or artwork</p>
-                  
-                </div>
-             </div>
+<!-- ART gallery -->
+<section class="ArtSketches container">
+  <div class="row" id="artGallery">
+      <!-- Dynamic cards will be added here -->
+  </div>
+</section>
+
+<script>
+  // Array of picture links
+  const pictureLinks = [
+      '../pictures/65423.jpg',
+      '../pictures/172977.jpg',
+      '../pictures/1231123.jpg',
+      '../pictures/IMG_8444.png',
+      '../pictures/65423.jpg',
+      '../pictures/172977.jpg',
+      '../pictures/1231123.jpg',
+      '../pictures/IMG_8444.png',
+      '../pictures/65423.jpg',
+      '../pictures/172977.jpg',
+      '../pictures/1231123.jpg',
+      '../pictures/IMG_8444.png',
+      '../pictures/65423.jpg',
+      '../pictures/172977.jpg',
+      '../pictures/1231123.jpg',
+      '../pictures/IMG_8444.png',
+      // Add more picture links as needed
+  ];
+
+  // Reference to the gallery container
+  const galleryContainer = document.getElementById('artGallery');
+
+  // Loop through the picture links and create cards
+  pictureLinks.forEach((link, index) => {
+      // Create a card element
+      const card = document.createElement('div');
+      card.className = 'col-12 col-sm-6 col-md-4 col-lg-3 mb-4';
+
+      // Create an anchor element for lightbox
+      const anchor = document.createElement('a');
+      anchor.href = link;
+      anchor.setAttribute('data-lightbox', 'gallery');
+      anchor.setAttribute('data-title', `Sketch ${index + 1}`);
+
+      // Create the card content
+      const cardContent = `
+          <div class="card">
+              <img src="${link}" alt="Art Sketch ${index + 1}" class="card-img-top">
+              <div class="card-body">
+                  <h3 class="card-title">Sketch ${index + 1}</h3>
+                  <!-- Additional content as needed -->
+              </div>
           </div>
-    
-     </section>
+      `;
+
+      // Set the card content inside the anchor element
+      anchor.innerHTML = cardContent;
+
+      // Append the anchor element to the card
+      card.appendChild(anchor);
+
+      // Append the card to the gallery container
+      galleryContainer.appendChild(card);
+  });
+</script>
+
    </main>
+
+
 <!-- Footer -->
 <footer class="footer container-fluid">
   <div class="space">

@@ -39,15 +39,20 @@
   }
 
   /*SocietyBackGroundImage animation*/
-  .SocietyBackGroundI{
+  .aboutUsH {
+    color: #fff;
+    font-size: 2.5em;
+}
+
+/* Adjusted image display */
+.SocietyBackGroundI {
     border-radius: 50px;
-    border:2px;
-    transform: translatex(-500);
+    border: 2px;
     box-shadow: 0px 5px 5px 2px bisque;
     -webkit-animation: puff-in-center 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-	        animation: puff-in-center 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-    
-  }
+    animation: puff-in-center 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    width: 100%;
+}
 
   @-webkit-keyframes puff-in-center {
     0% {
@@ -125,6 +130,36 @@ background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
 
 }
 
+/* tools section */
+.tools-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.tool-box {
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.tool-icon {
+  font-size: 2em;
+  color: #007bff;
+}
+
+.tool-label {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+
 /*Baclground for footer*/
 .footer{
 }
+
+
