@@ -21,6 +21,13 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/navbars/">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <!--For Mission-->
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Section</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+   
     
     <!--Footer Link for styleing-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -53,8 +60,66 @@
           to {
               transform: translateY(0);
           }
+          body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+      }
+      
+        
+
+        /* Custom CSS for fixed height of blog post images */
+        .card-img-top {
+          height: 200px; /* Set the desired fixed height */
+          object-fit: cover; /* Ensure the image covers the entire space */
+        }
+        .blog-card {
+          height: 500px; /* Set the desired fixed height for the blog card */
+          overflow: hidden; /* Hide content that exceeds the fixed height */
+        }
+        .blog-btn{
+          align-items: baseline;
+        }
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        .modal-content {
+            max-width: 1000px; /* Increase the max-width of the modal content */
+            margin: auto;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .img-fluid {
+            max-width: 100%; /* Ensure images are responsive within the modal */
+            height: auto;
+        }
+
+        .Blogtitle {
+          color: #fff;
+          font-size: 2.5em;
+          text-align: center;
+          padding: 40px;
       }
   </style>
+ 
+        
+    
 
   <script>
       // Add this script to make the navbar and name section sticky
@@ -152,56 +217,114 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+<hr class="lineF">
+<h1 padding="50px" class="Blogtitle">Content : BLOGS</h1>
+<!-- Blog section -->
+<section class="BlogSection container">
+  <div class="row" id="blogList">
+      <!-- Dynamic blogs will be added here -->
+  </div>
+</section>
 
-<!--Slide Show-->
-  <hr class="lineH">
-  <main>
-     <section class="SocietyBackGround">
-        <div class="container px-7 py-5 text-center" >
-            <h1 padding="50px" class="aboutUsH">About Us</h1>
-            <div class="row g-4 py-5 row-cols-1 row-cols-md-2 row-cols-lg-2">
-                <div class="feature col-lg-4">
-                  <img src="../Pictures/logo.jpg" style="height: 200px;">
-                </div>
-                <div class="feature col">
-                  <h3 class="text-lg-left">Personalized Experience</h3>
-                  <p style="text-align:left;">Customers expect companies to understand their unique tastes and preferences and engage them as individuals rather than customer types or segments.</p>
-                </div>
-            </div>
-        </div>
-     </section> 
-     <section class="SocietyWork">
-        <div class="container px-4 py-5 text-center">
-
-             <!--Workof Scoiety-->
-             <div class="row g-4 py-5 row-cols-1 row-cols-md-2 row-cols-lg-3">
-                <div class="feature col">
-                 <div class="feature d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
-                   <img src="../Pictures/logo.jpg" style="width:50%;height:100%">
-                 </div>
-                  <h3>Sharing</h3>
-                   <p>You need permission to use a logo unless it is for editorial or information purposes.</p>
-                 
-                </div>          
-                <div class="feature col">
-                  <div class="feature d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
-                    <img src="../Pictures/logo.jpg" style="width:50%;height:100%">
-                  </div>
-                    <h3>Interactive</h3>
-                    <p>Responsive logos are shape-shifting logos that change in size, complexity or even color to accommodate and adapt to wherever they are placed</p>
-                </div>
-                <div class="feature col">
-                  <div class="feature d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
-                    <img src="../Pictures/logo.jpg" style="width:50%;height:100%">
-                  </div>
-                    <h3>Smart Taging</h3>
-                    <p>A logo label is a branding label created by using your own company logo, design, motto or artwork</p>
-                  
-                </div>
-             </div>
+<div class="modal fade" id="blogModal" tabindex="-1" aria-labelledby="blogModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+          <span class="close-btn" onclick="closeModal()">&times;</span>
+          <div class="modal-body" id="blogContent">
+              <!-- Full blog content will be added here -->
           </div>
-    
-     </section>
+      </div>
+  </div>
+</div>
+
+
+
+<script>
+  // Array of blog data
+  const blogData = [
+      {
+          title: 'Blog Title 1',
+          image: '../pictures/myart/12.jpg',
+          description: 'Short description of the blog post. This can be a brief summary of what the blog is about.',
+          content: 'Full content of Blog 1 goes here...Recently, we asked one of NewBreed’s top donors what motivates them to support our mission and ministry. We found their response enlightening and it motivates us too. “For where your treasure is, there your heart will be also.” -Matthew 6:21 In my late 20’s, God really brought conviction to me about not giving. Prior toRecently, we asked one of NewBreed’s top donors what motivates them to support our mission and ministry. We found their response enlightening and it motivates us too. “For where your treasure is, there your heart will be also.” -Matthew 6:21 In my late 20’s, God really brought conviction to me about not giving. Prior toRecently, we asked one of NewBreed’s top donors what motivates them to support our mission and ministry. We found their response enlightening and it motivates us too. “For where your treasure is, there your heart will be also.” -Matthew 6:21 In my late 20’s, God really brought conviction to me about not giving. Prior toRecently, we asked one of NewBreed’s top donors what motivates them to support our mission and ministry. We found their response enlightening and it motivates us too. “For where your treasure is, there your heart will be also.” -Matthew 6:21 In my late 20’s, God really brought conviction to me about not giving. Prior toRecently, we asked one of NewBreed’s top donors what motivates them to support our mission and ministry. We found their response enlightening and it motivates us too. “For where your treasure is, there your heart will be also.” -Matthew 6:21 In my late 20’s, God really brought conviction to me about not giving. Prior toRecently, we asked one of NewBreed’s top donors what motivates them to support our mission and ministry. We found their response enlightening and it motivates us too. “For where your treasure is, there your heart will be also.” -Matthew 6:21 In my late 20’s, God really brought conviction to me about not giving. Prior toRecently, we asked one of NewBreed’s top donors what motivates them to support our mission and ministry. We found their response enlightening and it motivates us too. “For where your treasure is, there your heart will be also.” -Matthew 6:21 In my late 20’s, God really brought conviction to me about not giving. Prior toRecently, we asked one of NewBreed’s top donors what motivates them to support our mission and ministry. We found their response enlightening and it motivates us too. “For where your treasure is, there your heart will be also.” -Matthew 6:21 In my late 20’s, God really brought conviction to me about not giving. Prior to',
+      },
+      {
+          title: 'Blog Title 2',
+          image: '../pictures/myart/IMG_8444.png',
+          description: 'Another short description of the second blog post. This is a brief summary of its content.',
+          content: 'Full content of Blog 2 goes here...Recently, we asked one of NewBreed’s top donors what motivates them to support our mission and ministry. We found their response enlightening and it motivates us too. “For where your treasure is, there your heart will be also.” -Matthew 6:21 In my late 20’s, God really brought conviction to me about not giving. Prior to',
+      },
+      {
+        title: 'Blog Title 1',
+        image: '../pictures/myart/12.jpg',
+        description: 'S.',
+        content: 'Full content of Blog 1 goes here...',
+    },
+    {
+        title: 'Blog Title 2',
+        image: '../pictures/myart/IMG_8444.png',
+        description: '. We found their responseving. Prior to',
+        content: 'Full content of Blog 2 goes here...',
+    },
+      // Add more blogs as needed
+  ];
+
+  // Reference to the blog list container
+  const blogListContainer = document.getElementById('blogList');
+
+  // Loop through the blog data and create cards
+  blogData.forEach((blog, index) => {
+      // Create a blog element
+      const blogElement = document.createElement('div');
+      blogElement.className = 'col-12 col-md-6 col-lg-4 mb-4';
+
+      // Create the blog card content
+      <!-- Create the blog card content -->
+      const blogCardContent = `
+          <div class="card blog-card"> <!-- Make sure the 'blog-card' class is applied here -->
+              <img src="${blog.image}" class="card-img-top" alt="${blog.title}">
+              <div class="card-body">
+                  <h5 class="card-title">${blog.title}</h5>
+                  <p class="card-text">${blog.description}</p>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#blogModal" onclick="loadFullBlog(${index})">
+                      Read More
+                  </button>
+              </div>
+          </div>
+      `;
+      
+      // Set the blog card content
+      blogElement.innerHTML = blogCardContent;
+
+      // Set the blog card content
+      blogElement.innerHTML = blogCardContent;
+
+      // Append the blog card to the blog list container
+      blogListContainer.appendChild(blogElement);
+  });
+
+  // Function to load full blog content into the modal
+  function loadFullBlog(index) {
+      const fullBlogContent = document.getElementById('blogContent');
+      const blog = blogData[index];
+      fullBlogContent.innerHTML = `
+          <h2>${blog.title}</h2>
+          <img src="${blog.image}" class="img-fluid mb-3" alt="${blog.title}">
+          <p>${blog.content}</p>
+      `;
+  }
+  
+</script>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+
+
    </main>
 <!-- Footer -->
 <footer class="footer container-fluid">
