@@ -222,116 +222,141 @@
 
 
 <!-- project section -->
-<section class="Vision">
+
   <div class="container px-4 py-5 text-center">
     <a onclick="EventPage()">
       <button class="btn-h1">Projects</button>
     </a>
   </div>
   
-    <div class="container py-5 text-center">
-      <div class="row containerV">
-        
-        <!-- Card 1 -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-          <div class="card">
-            <img src="https://www.gettingsmart.com/wp-content/uploads/2017/06/Program-Code-Feature-Image.jpg" alt="Design Image" class="card-img-top img-fluid">
-            <div class="card-body">
-              <h3 class="card-title">Design</h3>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-              <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Card 2 -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-          <div class="card">
-            <img src="https://www.gettingsmart.com/wp-content/uploads/2017/06/Program-Code-Feature-Image.jpg" alt="Design Image" class="card-img-top img-fluid">
-            <div class="card-body">
-              <h3 class="card-title">Design</h3>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-              <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Card 3 -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-          <div class="card">
-            <img src="https://www.gettingsmart.com/wp-content/uploads/2017/06/Program-Code-Feature-Image.jpg" alt="Design Image" class="card-img-top img-fluid">
-            <div class="card-body">
-              <h3 class="card-title">Design</h3>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-              <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Card 4 -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-          <div class="card">
-            <img src="https://www.gettingsmart.com/wp-content/uploads/2017/06/Program-Code-Feature-Image.jpg" alt="Design Image" class="card-img-top img-fluid">
-            <div class="card-body">
-              <h3 class="card-title">Design</h3>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-              <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-          </div>
-        </div>
 
-                <!-- Card 1 -->
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                  <div class="card">
-                    <img src="https://www.gettingsmart.com/wp-content/uploads/2017/06/Program-Code-Feature-Image.jpg" alt="Design Image" class="card-img-top img-fluid">
-                    <div class="card-body">
-                      <h3 class="card-title">Design</h3>
-                      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-                      <a href="#" class="btn btn-primary">Read More</a>
-                    </div>
-                  </div>
-                </div>
-            
-                  <!-- Card 2 -->
-                  <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                    <div class="card">
-                      <img src="https://www.gettingsmart.com/wp-content/uploads/2017/06/Program-Code-Feature-Image.jpg" alt="Design Image" class="card-img-top img-fluid">
-                      <div class="card-body">
-                        <h3 class="card-title">Design</h3>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-                        <a href="#" class="btn btn-primary">Read More</a>
-                      </div>
-                    </div>
-                  </div>
-            
-                  <!-- Card 3 -->
-                  <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                    <div class="card">
-                      <img src="https://www.gettingsmart.com/wp-content/uploads/2017/06/Program-Code-Feature-Image.jpg" alt="Design Image" class="card-img-top img-fluid">
-                      <div class="card-body">
-                        <h3 class="card-title">Design</h3>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-                        <a href="#" class="btn btn-primary">Read More</a>
-                      </div>
-                    </div>
-                  </div>
-            
-                  <!-- Card 4 -->
-                  <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                    <div class="card">
-                      <img src="https://www.gettingsmart.com/wp-content/uploads/2017/06/Program-Code-Feature-Image.jpg" alt="Design Image" class="card-img-top img-fluid">
-                      <div class="card-body">
-                        <h3 class="card-title">Design</h3>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-                        <a href="#" class="btn btn-primary">Read More</a>
-                      </div>
-                    </div>
-                  </div>
-
-        </div>
-      </div>
+ 
+  <section class="BlogSection container">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4" id="blogList">
+        <!-- Dynamic blogs will be added here -->
     </div>
-  </section>
+</section>
+
+<div class="modal fade" id="blogModal" tabindex="-1" aria-labelledby="blogModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="modal-body" id="blogContent">
+                <!-- Full blog content will be added here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Array of blog data
+    const blogData = [
+        {
+            title: 'Blog Title 1',
+            image: './pictures/myart/12.jpg',
+            description: 'Short descriShoxbcknx csadkaspdbfm ixnaspXnksc as d ajwdsoacj[asmc djas d[ajdaspkrt the blog is about.',
+            content: 'Full cgfskdpwqd cxcsdk dwqdjdk iwqndqjwbd wqhqw dwfidawdjak cadoasdjpasjdasdk xacsajdaskdasdpasjidasicmasmxadjiaosdoascsa ca casd ad as das dasd asd   o',
+        },
+        {
+            title: 'Blog Title 2',
+            image: './pictures/myart/12.jpg',
+            description: 'Another short description of the second blog post. This is a brief summary of its content.',
+            content: 'Full content of Blog 2 goes here...Recently, we asked one of NewBreed’s top donors what motivates them to support our mission and ministry. We found their response enlightening and it motivates us too. “For where your treasure is, there your heart will be also.” -Matthew 6:21 In my late 20’s, God really brought conviction to me about not giving. Prior to',
+          },      
+        {
+          title: 'Blog Title 1',
+          image: './pictures/myart/12.jpg',
+          description: 'S.',
+          content: 'Full content of Blog 1 goes here...',
+        },
+        {
+            title: 'Blog Title 2',
+            image: './pictures/myart/12.jpg',
+            description: '. We found their responseving. Prior to',
+            content: 'Full content of Blog 2 goes here...',
+        },
+        {
+          title: 'Blog Title 1',
+          image: './pictures/myart/12.jpg',
+          description: 'Short descriShoxbcknx csadkaspdbfm ixnaspXnksc as d ajwdsoacj[asmc djas d[ajdaspkrt the blog is about.',
+          content: 'Full cgfskdpwqd cxcsdk dwqdjdk iwqndqjwbd wqhqw dwfidawdjak cadoasdjpasjdasdk xacsajdaskdasdpasjidasicmasmxadjiaosdoascsa ca casd ad as das dasd asd   o',
+        },
+        {
+            title: 'Blog Title 2',
+            image: './pictures/myart/12.jpg',
+            description: 'Another short description of the second blog post. This is a brief summary of its content.',
+            content: 'Full content of Blog 2 goes here...Recently, we asked one of NewBreed’s top donors what motivates them to support our mission and ministry. We found their response enlightening and it motivates us too. “For where your treasure is, there your heart will be also.” -Matthew 6:21 In my late 20’s, God really brought conviction to me about not giving. Prior to',
+        },
+        {
+          title: 'Blog Title 1',
+          image: './pictures/myart/12.jpg',
+          description: 'S.',
+          content: 'Full content of Blog 1 goes here...',
+        },
+        {
+          title: 'Blog Title 2',
+          image: './pictures/myart/12.jpg',
+          description: '. We found their responseving. Prior to',
+          content: 'Full content of Blog 2 goes here...',
+        },
+    // Add more blogs as needed
+];
+
+    // Reference to the blog list container
+    const blogListContainer = document.getElementById('blogList');
+
+    // Loop through the blog data and create cards
+    blogData.forEach((blog, index) => {
+        // Create a blog element
+        const blogElement = document.createElement('div');
+        blogElement.className = 'col mb-4';
+
+        // Create the blog card content
+        const blogCardContent = `
+            <div class="card blog-card">
+                <img src="${blog.image}" class="card-img-top" alt="${blog.title}">
+                <div class="card-body">
+                    <h5 class="card-title">${blog.title}</h5>
+                    <p class="card-text">${blog.description}</p>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#blogModal" onclick="loadFullBlog(${index})">
+                        Read More
+                    </button>
+                    <a onclick="EventPage()" class="btn btn-secondary ms-2" role="button">Visit Project</a>
+                </div>
+            </div>
+        `;
+
+        // Set the blog card content
+        blogElement.innerHTML = blogCardContent;
+
+        // Append the blog card to the blog list container
+        blogListContainer.appendChild(blogElement);
+    });
+
+    // Function to load full blog content into the modal
+    function loadFullBlog(index) {
+        const fullBlogContent = document.getElementById('blogContent');
+        const blog = blogData[index];
+        fullBlogContent.innerHTML = `
+            <h2>${blog.title}</h2>
+            <img src="${blog.image}" class="img-fluid mb-3" alt="${blog.title}">
+            <p>${blog.content}</p>
+        `;
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        $('#blogModal').modal('hide');
+    }
+</script>
+  
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
 
 <!-- Footer -->
 <footer class="footer container-fluid">

@@ -165,50 +165,117 @@ document.addEventListener('DOMContentLoaded', function () {
 
     <hr class="lineH">
 
-    <!-- Projects -->
-    <section class="Event1 container px-2 py-5 mb-4 text-center">
-      <div class="row g-4 py-5 row-cols-1 row-cols-sm-1 row-cols-lg-2">
-        <div class="col">
-          <img class="imageE" data-aos="zoom-in" src="../Pictures/logo.jpg"/>
-        </div>
-        <div class="col" data-aos="flip-up">
-          <h1 class="text-lg-center">Personalized Experience</h1>
-          <h3 class="text-center" style="text-align:left;">Customers expect companies to understand their unique tastes and preferences and engage them as individuals rather than customer types or segments.</h3>
-          
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Projects -->
+<!-- Projects -->
+<section class="Event1 container px-2 py-5 mb-4 text-center">
+  <div class="row g-4 py-5 row-cols-1 row-cols-sm-1 row-cols-lg-2">
+    <div class="col">
+      <!-- Image -->
+      <img class="imageE" data-aos="zoom-in" src="../Pictures/logo.jpg"/>
+
+      <!-- Video Player - Replace with your actual video file -->
+      <video id="projectVideo" width="100%" height="auto" controls class="mt-3" style="display: none;">
+        <source src="../Pictures/your-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
-    </section>
-
-
-
-
-    <section class="Event2 container px-2 py-5 text-center">
-      <div class="row g-4 py-5 row-cols-1 row-cols-md-1 row-cols-lg-2">
-        <div class="col" data-aos="flip-up">
-          <h1 class="text-center">Personalized Experience</h1>
-          <h3 class="text-center" style="text-align:left;">Customers expect companies to understand their unique tastes and preferences and engage them as individuals rather than customer types or segments.</h3>
-          <div>
-            <span>
-              <img data-aos="flip-left" src="../Pictures/icons8-user-location-64.png" style="height:25px;"/>
-            </span>
-              Location
-            <span>
-              <img data-aos="flip-up" src="../Pictures/icons8-time-machine-64.png" style="height:25px;"/>
-            </span>
-              Time
-            <span>
-                <img data-aos="flip-right" src="../Pictures/icons8-calendar-26-40.png" style="height:25px;"/>
-            </span>
-              Date
+    <div class="col" data-aos="flip-up">
+      <h1 class="text-lg-center">Personalized Experience</h1>
+      <!-- Container for Text Description -->
+      <div class="text-container">
+        <h3 class="text-center" style="text-align:left;">
+          Customers expect companies to understand their unique tastes and preferences and engage them as individuals rather than customer types or segments.
+          Customers expect companies to understand their unique tastes and preferences and engage them as individuals rather than customer types or segments.
+        </h3>
+        <!-- Expanded description container (initially collapsed) -->
+        <div class="container collapse" id="expandedDescription">
+          <!-- Right Column for More Text Description and Buttons -->
+          <div class="col-lg-12 col-md-12">
+            <div class="col-12">
+              <p>
+                Additional content such as videos, more detailed description, GitHub links, etc. can go here.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu turpis at ipsum pharetra tincidunt.
+                Integer ut sapien vel mi fermentum fermentum. Sed quis leo vel velit euismod gravida ut non ex.
+                Nam nec ante non nisi fringilla tincidunt. Proin vel tortor ac justo vestibulum convallis.
+                Curabitur consectetur risus a turpis tristique, auctor bibendum lacus fringilla.
+                Nullam eu nisl in lacus suscipit sodales ac in libero. Phasellus eget ipsum a mauris imperdiet commodo.
+                Sed et ligula et nunc ullamcorper convallis.
+              </p>
+              <!-- GitHub Button - Replace with your actual GitHub repository URL -->
+              <a href="https://github.com/your-username/your-repository" target="_blank" class="btn btn-secondary mt-2">GitHub Repository</a>
+            </div>
           </div>
         </div>
-        <div class="col">
-            <img class="imageE" data-aos="zoom-in" src="../Pictures/logo.jpg"/>
-        </div>
+      </div>
     </div>
-    </section>
+    <!-- Button to toggle expanded description -->
+    <div class="col-12 text-center mt-3">
+      <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#expandedDescription" aria-expanded="false" aria-controls="expandedDescription" onclick="toggleVideoVisibility()">
+        View More
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+function toggleVideoVisibility() {
+  var video = document.getElementById("projectVideo");
+  if (video.style.display === "none") {
+    video.style.display = "block";
+  } else {
+    video.style.display = "none";
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </main>
-   
+
+  
    <hr class="lineF">
 <!-- Footer -->
 <footer class="footer container-fluid">

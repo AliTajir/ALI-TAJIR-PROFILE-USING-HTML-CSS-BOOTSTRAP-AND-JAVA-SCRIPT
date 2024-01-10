@@ -67,55 +67,85 @@
       }
       
         
+    /* Custom CSS for fixed height of blog post images */
+    .card-img-top {
+        height: 200px; /* Set the desired fixed height */
+        object-fit: cover; /* Ensure the image covers the entire space */
+    }
 
-        /* Custom CSS for fixed height of blog post images */
-        .card-img-top {
-          height: 200px; /* Set the desired fixed height */
-          object-fit: cover; /* Ensure the image covers the entire space */
-        }
-        .blog-card {
-          height: 500px; /* Set the desired fixed height for the blog card */
-          overflow: hidden; /* Hide content that exceeds the fixed height */
-        }
-        .blog-btn{
-          align-items: baseline;
-        }
-        .blog-post {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            cursor: pointer;
-        }
+    /* Custom CSS for fixed height and styling of blog cards */
+    .blog-card {
+        height: 500px; /* Set the desired fixed height for the blog card */
+        overflow: hidden; /* Hide content that exceeds the fixed height */
+        border: 3px solid #007bff; /* Add a wider and colored border to the card */
+        border-radius: 15px; /* Add a larger border radius for rounded corners */
+        transition: transform 0.3s ease-in-out; /* Add a smooth transition effect on hover */
+        display: flex;
+        flex-direction: column;
+    }
 
-        .modal-content {
-            max-width: 1000px; /* Increase the max-width of the modal content */
-            margin: auto;
-            padding: 20px;
-            border-radius: 8px;
-        }
+    .blog-card:hover {
+        transform: scale(1.05); /* Add a scale effect on hover */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow on hover */
+    }
 
-        .close-btn {
-            cursor: pointer;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
+    .blog-card .card-img-top {
+        border-bottom: 3px solid #007bff; /* Add a wider and colored border to the bottom of the image */
+    }
 
-        .img-fluid {
-            max-width: 100%; /* Ensure images are responsive within the modal */
-            height: auto;
-        }
+    .blog-card .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        padding: 20px; /* Add padding to the card body */
+        text-align: center; /* Center-align text in the card body */
+        height: 250px;
+    }
 
-        .Blogtitle {
-          color: #fff;
-          font-size: 2.5em;
-          text-align: center;
-          padding: 40px;
-      }
+    .blog-card .card-title {
+        font-size: 1.8em; /* Increase the font size of the title */
+        margin-bottom: 10px; /* Add margin at the bottom of the title */
+        color: #333; /* Change the title color */
+        text-align: center; /* Center-align the title */
+    }
+
+    .blog-card .card-text {
+        color: #666; /* Change the text color */
+        text-align: center; /* Center-align the text */
+    }
+
+    .blog-card .btn-primary {
+        align-self: center; /* Align the button to the center */
+        margin-top: auto; /* Add margin at the top of the button */
+        background-color: #007bff;
+        border: 2px solid #007bff; /* Add a border to the button */
+        transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Add a smooth transition effect on hover */
+    }
+
+    .blog-card .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+    /* Additional styles for modal and blog title */
+    .modal-content {
+        max-width: 1000px; /* Increase the max-width of the modal content */
+        margin: auto;
+        padding: 20px;
+        border-radius: 15px; /* Add a larger border radius for rounded corners */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+    }
+
+    .Blogtitle {
+        color: #fff;
+        font-size: 2.5em;
+        text-align: center;
+        padding: 40px;
+        background-color: #007bff; /* Add a background color to the blog title */
+        border-radius: 15px; /* Add a larger border radius for rounded corners */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+    }
   </style>
  
         
