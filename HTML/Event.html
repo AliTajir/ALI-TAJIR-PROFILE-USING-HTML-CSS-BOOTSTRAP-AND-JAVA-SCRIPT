@@ -31,7 +31,9 @@
     <!--Title and Logo-->
     <title>Ali Tajir Profile</title>
     <link rel = "icon" class="rounded-4" href ="../Pictures/logo.jpg" type = "image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
 
     <style>
       /* Additional styles for the sticky navbar and name section */
@@ -154,8 +156,17 @@ document.addEventListener('DOMContentLoaded', function () {
 </nav>
 
 
+
+
+
+
+
+
+
+
+
   <main>
-    <hr class="lineH">
+   
 
     <!-- Banner -->
     <header class="banner">
@@ -163,7 +174,109 @@ document.addEventListener('DOMContentLoaded', function () {
         <p>Explore the exciting projects we've been working on.</p>
     </header>
 
+   
+
     <hr class="lineH">
+  <!-- Categories Section -->
+  <div class="navbar2">
+    <a href="#">PROJECTS CATEGORIES</a>
+    <div class="dropdown">
+      <button class="dropbtn">Categories 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a onclick="EventPage()">Category 1</a>
+        <a href="#category2">Category 2</a>
+        <!-- Add more categories as needed -->
+      </div>
+    </div>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <hr class="lineH">
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="Event1 container px-2 py-5 mb-4 text-center">
+      <div class="row g-4 py-5">
+        <div class="col-md-6 col-lg-4 border-end">
+          <!-- Image -->
+          <img class="imageE" data-aos="zoom-in" src="../Pictures/febjjkndsam.jpg"/>
+    
+          <!-- Video Player - Replace with your actual video file -->
+          <video id="projectVideo" width="100%" height="auto" controls class="mt-3" style="display: none;">
+            <!-- Check if video link is provided -->
+            <source src="../Pictures/abc.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <!-- Display message if no video link is provided -->
+         
+        </div>
+        <div class="col-md-6 col-lg-8 border-start text-left" data-aos="flip-up">
+          <h1 class="text-lg-center">Personalized Experience</h1>
+          <!-- Container for Text Description -->
+          <div class="text-container">
+            <h3 class="text-left">
+              Customers expect companies to understand their unique tastes and preferences and engage them as individuals rather than customer types or segments.
+              Customers expect companies to understand their unique tastes and preferences and engage them as individuals rather than customer types or segments.
+            </h3>
+            <!-- Expanded description container (initially collapsed) -->
+            <div class="container collapse" id="expandedDescription">
+              <!-- Right Column for More Text Description and Buttons -->
+              <div class="col-lg-12 col-md-12">
+                <div class="col-12">
+                  <p>
+                    Additional content such as videos, more detailed description, GitHub links, etc. can go here.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu turpis at ipsum pharetra tincidunt.
+                    Integer ut sapien vel mi fermentum fermentum. Sed quis leo vel velit euismod gravida ut non ex.
+                    Nam nec ante non nisi fringilla tincidunt. Proin vel tortor ac justo vestibulum convallis.
+                    Curabitur consectetur risus a turpis tristique, auctor bibendum lacus fringilla.
+                    Nullam eu nisl in lacus suscipit sodales ac in libero. Phasellus eget ipsum a mauris imperdiet commodo.
+                    Sed et ligula et nunc ullamcorper convallis.
+                    Additional content such as videos, more detailed description, GitHub links, etc. can go here.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu turpis at ipsum pharetra tincidunt.
+                    Integer ut sapien vel mi fermentum fermentum. Sed quis leo vel velit euismod gravida ut non ex.
+                    Nam nec ante non nisi fringilla tincidunt. Proin vel tortor ac justo vestibulum convallis.
+                    Curabitur consectetur risus a turpis tristique, auctor bibendum lacus fringilla.
+                    Nullam eu nisl in lacus suscipit sodales ac in libero. Phasellus eget ipsum a mauris imperdiet commodo.
+                    Sed et ligula et nunc ullamcorper convallis.
+                    Additional content such as videos, more detailed description, GitHub links, etc. can go here.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu turpis at ipsum pharetra tincidunt.
+                    Integer ut sapien vel mi fermentum fermentum. Sed quis leo vel velit euismod gravida ut non ex.
+                    Nam nec ante non nisi fringilla tincidunt. Proin vel tortor ac justo vestibulum convallis.
+                    Curabitur consectetur risus a turpis tristique, auctor bibendum lacus fringilla.
+                    Nullam eu nisl in lacus suscipit sodales ac in libero. Phasellus eget ipsum a mauris imperdiet commodo.
+                    Sed et ligula et nunc ullamcorper convallis.
+                  </p>
+                  <!-- GitHub Button - Replace with your actual GitHub repository URL -->
+                  <a href="https://github.com/your-username/your-repository" target="_blank" class="btn btn-secondary mt-2">GitHub Repository</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Button to toggle expanded description -->
+      <div class="col-12 text-center mt-3">
+        <button id="toggleButton" class="btn btn-info" type="button" aria-expanded="false" aria-controls="expandedDescription" onclick="toggleVideoVisibility()">
+          View More
+        </button>
+        
+        
+      </div>
+    </section>
+
+   
+    
 
 
 
@@ -179,30 +292,71 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<!-- Projects -->
-<!-- Projects -->
+
+
+
+
+    <script>
+      function toggleVideoVisibility() {
+        var video = document.getElementById("projectVideo");
+        var button = document.getElementById("toggleButton");
+        var expandedDescription = document.getElementById("expandedDescription");
+        var textContainer = document.querySelector(".text-container");
+    
+        if (video.style.display === "none") {
+          video.style.display = "block";
+          button.innerText = "View Less";
+          expandedDescription.classList.add("show");
+        } else {
+          video.style.display = "none";
+          button.innerText = "View More";
+          expandedDescription.classList.remove("show");
+        }
+      }
+    
+      document.getElementById("projectVideo").addEventListener("start", function() {
+        // When the video ends, update the layout
+        document.querySelector(".col-md-6").classList.remove("col-md-6", "col-lg-4", "border-end");
+        document.querySelector(".col-lg-8").classList.remove("col-lg-8", "border-start");
+        document.querySelector(".text-container").classList.remove("text-container");
+      });
+    </script>
+    
+
+
+
+
+
+
+
+
+
+
+    <!-- First Project Section -->
 <section class="Event1 container px-2 py-5 mb-4 text-center">
-  <div class="row g-4 py-5 row-cols-1 row-cols-sm-1 row-cols-lg-2">
-    <div class="col">
+  <div class="row g-4 py-5">
+    <div class="col-md-6 col-lg-4 border-end">
       <!-- Image -->
-      <img class="imageE" data-aos="zoom-in" src="../Pictures/logo.jpg"/>
-
+      <img class="imageE" data-aos="zoom-in" src="../Pictures/febjjkndsam.jpg"/>
+    
       <!-- Video Player - Replace with your actual video file -->
-      <video id="projectVideo" width="100%" height="auto" controls class="mt-3" style="display: none;">
-        <source src="../Pictures/your-video.mp4" type="video/mp4">
+      <video id="projectVideo1" width="100%" height="auto" controls class="mt-3" style="display: none;">
+        <!-- Check if video link is provided -->
+        <source src="../Pictures/abc.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
+      <!-- Display message if no video link is provided -->
     </div>
-    <div class="col" data-aos="flip-up">
+    <div class="col-md-6 col-lg-8 border-start text-left" data-aos="flip-up">
       <h1 class="text-lg-center">Personalized Experience</h1>
       <!-- Container for Text Description -->
       <div class="text-container">
-        <h3 class="text-center" style="text-align:left;">
+        <h3 class="text-left">
           Customers expect companies to understand their unique tastes and preferences and engage them as individuals rather than customer types or segments.
           Customers expect companies to understand their unique tastes and preferences and engage them as individuals rather than customer types or segments.
         </h3>
         <!-- Expanded description container (initially collapsed) -->
-        <div class="container collapse" id="expandedDescription">
+        <div class="container collapse" id="expandedDescription1">
           <!-- Right Column for More Text Description and Buttons -->
           <div class="col-lg-12 col-md-12">
             <div class="col-12">
@@ -222,25 +376,78 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
     </div>
-    <!-- Button to toggle expanded description -->
-    <div class="col-12 text-center mt-3">
-      <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#expandedDescription" aria-expanded="false" aria-controls="expandedDescription" onclick="toggleVideoVisibility()">
-        View More
-      </button>
+  </div>
+  <!-- Button to toggle expanded description -->
+  <div class="col-12 text-center mt-3">
+    <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#expandedDescription1" aria-expanded="false" aria-controls="expandedDescription1" onclick="toggleVideoVisibility('projectVideo1')">
+      View More
+    </button>
+  </div>
+</section>
+
+<!-- Second Project Section -->
+<section class="Event1 container px-2 py-5 mb-4 text-center">
+  <div class="row g-4 py-5">
+    <div class="col-md-6 col-lg-4 border-end">
+      <!-- Image -->
+      <img class="imageE" data-aos="zoom-in" src="../Pictures/another_image.jpg"/>
+    
+      <!-- Video Player - Replace with your actual video file -->
+      <video id="projectVideo2" width="100%" height="auto" controls class="mt-3" style="display: none;">
+        <!-- Check if video link is provided -->
+        <source src="../Pictures/another_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- Display message if no video link is provided -->
     </div>
+    <div class="col-md-6 col-lg-8 border-start text-left" data-aos="flip-up">
+      <h1 class="text-lg-center">Another Project</h1>
+      <!-- Container for Text Description -->
+      <div class="text-container">
+        <h3 class="text-left">
+          Description for the second project goes here.
+        </h3>
+        <!-- Expanded description container (initially collapsed) -->
+        <div class="container collapse" id="expandedDescription2">
+          <!-- Right Column for More Text Description and Buttons -->
+          <div class="col-lg-12 col-md-12">
+            <div class="col-12">
+              <p>
+                Additional content for the second project.
+              </p>
+              <!-- GitHub Button - Replace with your actual GitHub repository URL -->
+              <a href="https://github.com/your-username/your-another-repository" target="_blank" class="btn btn-secondary mt-2">GitHub Repository</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Button to toggle expanded description -->
+  <div class="col-12 text-center mt-3">
+    <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#expandedDescription2" aria-expanded="false" aria-controls="expandedDescription2" onclick="toggleVideoVisibility('projectVideo2')">
+      View More
+    </button>
   </div>
 </section>
 
 <script>
-function toggleVideoVisibility() {
-  var video = document.getElementById("projectVideo");
-  if (video.style.display === "none") {
-    video.style.display = "block";
-  } else {
-    video.style.display = "none";
+  function toggleVideoVisibility(videoId) {
+    var video = document.getElementById(videoId);
+    var expandedDescription = document.getElementById("expandedDescription" + videoId.charAt(videoId.length - 1));
+
+    if (video.style.display === "none") {
+      video.style.display = "block";
+      expandedDescription.style.display = "none";
+    } else {
+      video.style.display = "none";
+      expandedDescription.style.display = "block";
+    }
   }
-}
 </script>
+
+    
+    
 
 
 

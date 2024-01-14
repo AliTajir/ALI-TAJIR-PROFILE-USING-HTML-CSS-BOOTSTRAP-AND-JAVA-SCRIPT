@@ -190,125 +190,171 @@ document.addEventListener('DOMContentLoaded', function () {
   
      <hr class="lineG" data-aos="flip-up">
 
+
+
+
      <section class="SocietyWork">
-        <div class="container px-4 py-5 text-center">
-
-             <!--Work of Scoiety-->
-             <div class="row g-4 py-5 row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-3">
-                <div class="col">
-                 <div class="feature d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
-                   <img class="image scoietyWork1" src="../Pictures/logo.jpg" style="width:50%;height:100%">
-                 </div>
-                  <h1 data-aos="fade-up">Sharing</h1>
-                   <h3 data-aos="fade-left">You need permission to use a logo unless it is for editorial or information purposes.</h3>
-                </div>  
-  
-
-                <div class="col">
-                  <div class="feature d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
-                    <img class="image scoietyWork2" src="../Pictures/logo.jpg" style="width:50%;height:100%">
-                  </div>
-                    <h1 data-aos="fade-down">Interactive</h1>
-                    <h3 data-aos="fade-right-up">Responsive logos are shape-shifting logos that change in size, complexity or even color to accommodate and adapt to wherever they are placed</h3>
-                </div>
-  
-
-                <div class="col">
-                  <div class="feature d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
-                    <img class="image scoietyWork3" src="../Pictures/logo.jpg" style="width:50%;height:100%">
-                  </div>
-                    <h1 data-aos="fade-up">Smart Taging</h1>
-                    <h3 data-aos="fade-right">A logo label is a branding label created by using your own company logo, design, motto or artwork</h3>
-                </div>
-      
-
-                <div class="col">
-                  <div class="feature d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
-                    <img class="image scoietyWork3" src="../Pictures/logo.jpg" style="width:50%;height:100%">
-                  </div>
-                    <h1 data-aos="fade-up">Smart Taging</h1>
-                    <h3 data-aos="fade-right">A logo label is a branding label created by using your own company logo, design, motto or artwork</h3>
-                </div>
-       
-
-                <div class="col">
-                  <div class="feature d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
-                    <img class="image scoietyWork3" src="../Pictures/logo.jpg" style="width:50%;height:100%">
-                  </div>
-                    <h1 data-aos="fade-up">Smart Taging</h1>
-                    <h3 data-aos="fade-right">A logo label is a branding label created by using your own company logo, design, motto or artwork</h3>
-                </div>
-           
-
-                <div class="col">
-                  <div class="feature d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
-                    <img class="image scoietyWork3" src="../Pictures/logo.jpg" style="width:50%;height:100%">
-                  </div>
-                    <h1 data-aos="fade-up">Smart Taging</h1>
-                    <h3 data-aos="fade-right">A logo label is a branding label created by using your own company logo, design, motto or artwork</h3>
-                </div>
-           
-             </div>
-          </div>
+      <div class="container px-4 py-5 text-center">
+        <!-- Work of Society -->
+        <div class="row g-4 py-5 row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-4" id="societyWorkContainer">
+          <!-- Existing items go here -->
+        </div>
+      </div>
+    </section>
     
-     </section>
+    <!-- Your JavaScript code goes here -->
+    <script>
+      // Sample data for new entries
+      const newEntries = [
+        { title: 'Sharing', description: 'You need permission to use a logo unless it is for editorial or information purposes.', image: '../Pictures/logo.jpg' },
+        { title: 'Interactive', description: 'Responsive logos are shape-shifting logos that change in size, complexity or even color to accommodate and adapt to wherever they are placed', image: '../Pictures/logo.jpg' },
+        { title: 'Smart Tagging', description: 'A logo label is a branding label created by using your own company logo, design, motto or artwork', image: '../Pictures/logo.jpg' },
+        // Add more entries as needed
+        { title: 'Sharing', description: 'You need permission to use a logo unless it is for editorial or information purposes.', image: '../Pictures/logo.jpg' },
+
+      ];
+    
+      // Function to create a new item
+      function createNewItem(entry) {
+        const newItem = document.createElement('div');
+        newItem.classList.add('col');
+        newItem.innerHTML = `
+          <div class="feature d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3" data-aos="zoom-in">
+            <img class="image scoietyWork" src="${entry.image}" style="width:50%;height:100%">
+          </div>
+          <h1 data-aos="fade-up">${entry.title}</h1>
+          <h3 data-aos="fade-right">${entry.description}</h3>
+        `;
+        return newItem;
+      }
+    
+      // Function to append new items to the container
+      function appendNewItems(entries) {
+        const container = document.getElementById('societyWorkContainer');
+        entries.forEach((entry) => {
+          const newItem = createNewItem(entry);
+          container.appendChild(newItem);
+        });
+      }
+    
+      // Call the function with the sample data
+      appendNewItems(newEntries);
+    </script>
+    
 
 
 
 
 
        <!-- Tools Section -->
-       <h1 padding="50px" class="toolsheading" data-aos="fade-down">Languages and Tools</h1>
-       <section class="tools-section" id="toolsSection">
-        <!-- Tool boxes will be dynamically added here -->
-    </section>
+<!-- Tools Section -->
+<h1 class="toolsheading" data-aos="fade-down">Languages and Tools</h1>
+
+<!-- Category tabs for tools -->
+<div class="container mt-3 mb-3">
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link active" data-category="all" onclick="filterTools('all')">All</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-category="coding" onclick="filterTools('coding')">Coding</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-category="art" onclick="filterTools('art')">Art</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-category="business" onclick="filterTools('business')">Business</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-category="hobbies" onclick="filterTools('hobbies')">Hobbies</a>
+    </li>
+    <!-- Add more categories as needed -->
+  </ul>
+</div>
+
+<!-- Tools section -->
+<section class="tools-section" id="toolsSection">
+  <!-- Tool boxes will be dynamically added here -->
+</section>
+
 <script>
-    // Tool data (you can add more tools)
-    const toolsData = [
-        { name: 'HTML', iconClass: 'fab fa-html5' },
-        { name: 'CSS', iconClass: 'fab fa-css3-alt' },
-        { name: 'JavaScript', iconClass: 'fab fa-js-square' },
-        { name: 'React', iconClass: 'fab fa-react' },
-        { name: 'Express.js', iconClass: 'fas fa-server' },
-        { name: 'MongoDB', iconClass: 'fas fa-database' },
-        { name: 'Vue.js', iconClass: 'fab fa-vuejs' },
-        { name: 'Sass', iconClass: 'fab fa-sass' },
-        { name: 'Git', iconClass: 'fab fa-git' },
-        { name: 'Visual Studio Code', iconClass: 'fas fa-code' },
-        { name: 'Angular', iconClass: 'fab fa-angular' },
-        { name: 'Bootstrap', iconClass: 'fab fa-bootstrap' },
-        { name: 'Django', iconClass: 'fab fa-python' },
-        { name: 'jQuery', iconClass: 'fab fa-js' },
-        { name: 'Laravel', iconClass: 'fab fa-laravel' },
-        { name: 'MySQL', iconClass: 'fas fa-database' },
-        { name: 'PHP', iconClass: 'fab fa-php' },
-        { name: 'Python', iconClass: 'fab fa-python' },
-        { name: 'Ruby', iconClass: 'fas fa-gem' },
-        // Add more tools as needed
-    ];
+  // Your existing JavaScript code for the tools section
+  const tools = [
+    // Coding tools
+    { category: 'coding', name: 'HTML5', iconClass: 'fab fa-html5' },
+    { category: 'coding', name: 'CSS3', iconClass: 'fab fa-css3' },
+    { category: 'coding', name: 'JavaScript', iconClass: 'fab fa-js' },
+    { category: 'coding', name: 'React', iconClass: 'fab fa-react' },
+    { category: 'coding', name: 'Node.js', iconClass: 'fab fa-node' },
+    { category: 'coding', name: 'Python', iconClass: 'fab fa-python' },
+    { category: 'coding', name: 'Git', iconClass: 'fab fa-git-alt' },
+    { category: 'coding', name: 'VS Code', iconClass: 'fas fa-code' },
+    { category: 'coding', name: 'Angular', iconClass: 'fab fa-angular' },
+    { category: 'coding', name: 'Java', iconClass: 'fab fa-java' },
 
-    // Get the toolsSection element
-    const toolsSection = document.getElementById('toolsSection');
+    // Art tools
+    { category: 'art', name: 'Photoshop', iconClass: 'fas fa-paint-brush' },
+    { category: 'art', name: 'Illustrator', iconClass: 'fas fa-paint-brush' },
+    { category: 'art', name: 'Procreate', iconClass: 'fas fa-paint-brush' },
+    { category: 'art', name: 'Clip Studio Paint', iconClass: 'fas fa-paint-brush' },
+    { category: 'art', name: 'Wacom Tablet', iconClass: 'fas fa-tablet-alt' },
+    { category: 'art', name: 'Copic Markers', iconClass: 'fas fa-marker' },
+    { category: 'art', name: '3D Modeling', iconClass: 'fas fa-cube' },
+    { category: 'art', name: 'Typography', iconClass: 'fas fa-font' },
+    { category: 'art', name: 'Color Theory', iconClass: 'fas fa-palette' },
+    { category: 'art', name: 'Digital Painting', iconClass: 'fas fa-paint-brush' },
 
-    // Dynamically create tool boxes
-    toolsData.forEach(tool => {
-        const toolBox = document.createElement('div');
-        toolBox.classList.add('tool-box');
+    // Business tools
+    { category: 'business', name: 'Excel', iconClass: 'fas fa-file-excel' },
+    { category: 'business', name: 'PowerPoint', iconClass: 'fas fa-file-powerpoint' },
+    { category: 'business', name: 'Word', iconClass: 'fas fa-file-word' },
+    { category: 'business', name: 'Google Sheets', iconClass: 'fab fa-google' },
+    { category: 'business', name: 'Analytics', iconClass: 'fas fa-chart-bar' },
+    { category: 'business', name: 'Trello', iconClass: 'fab fa-trello' },
+    { category: 'business', name: 'CRM Software', iconClass: 'fas fa-briefcase' },
+    { category: 'business', name: 'Project Management', iconClass: 'fas fa-tasks' },
+    { category: 'business', name: 'Email Marketing', iconClass: 'fas fa-envelope' },
+    { category: 'business', name: 'Financial Planning', iconClass: 'fas fa-money-bill-wave' },
 
-        const icon = document.createElement('i');
-        icon.classList.add('tool-icon', ...tool.iconClass.split(' '));
+    // Hobbies tools
+    { category: 'hobbies', name: 'Sketching Kit', iconClass: 'fas fa-palette' },
+    { category: 'hobbies', name: 'Photography', iconClass: 'fas fa-camera' },
+    { category: 'hobbies', name: 'Cooking Utensils', iconClass: 'fas fa-utensils' },
+    { category: 'hobbies', name: 'Gardening Tools', iconClass: 'fas fa-seedling' },
+    { category: 'hobbies', name: 'DIY Crafts', iconClass: 'fas fa-tools' },
+    { category: 'hobbies', name: 'Musical Instruments', iconClass: 'fas fa-guitar' },
+    { category: 'hobbies', name: 'Fitness Equipment', iconClass: 'fas fa-dumbbell' },
+    { category: 'hobbies', name: 'Board Games', iconClass: 'fas fa-dice' },
+    { category: 'hobbies', name: 'Reading Glasses', iconClass: 'fas fa-glasses' },
+    { category: 'hobbies', name: 'Outdoor Gear', iconClass: 'fas fa-hiking' },
+  ];
 
+  const toolsSection = document.getElementById('toolsSection');
 
-        const label = document.createElement('div');
-        label.classList.add('tool-label');
-        label.textContent = tool.name;
+  function filterTools(category) {
+    toolsSection.innerHTML = '';
 
-        toolBox.appendChild(icon);
-        toolBox.appendChild(label);
+    const filteredTools = (category === 'all') ? tools : tools.filter(tool => tool.category === category);
 
-        toolsSection.appendChild(toolBox);
+    filteredTools.forEach(tool => {
+      const toolBox = document.createElement('div');
+      toolBox.className = 'col-6 col-sm-3 col-md-2 col-lg-2 mb-2'; // Adjust the column classes here
+
+      const toolBoxContent = `
+        <div class="tool-box">
+          <i class="${tool.iconClass} fa-2x"></i>
+          <h6 class="tool-name">${tool.name}</h6>
+        </div>
+      `;
+
+      toolBox.innerHTML = toolBoxContent;
+      toolsSection.appendChild(toolBox);
     });
+  }
+
+  filterTools('all');
 </script>
+
  
 
 

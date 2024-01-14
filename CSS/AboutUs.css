@@ -23,20 +23,7 @@
     animation: float 4s ease-in-out infinite;
   }
 
-@-webkit-keyframes float {
-    0% {
-      box-shadow: 0 5px 25px 0px rgba(0, 0, 0, 0.6);
-      transform: translatey(0px);
-    }
-    50% {
-      box-shadow: 0px 5px 25px 2px bisque;
-      transform: translatey(-20px);
-    }
-    100% {
-      box-shadow: 0 5px 25px 0px rgba(26, 34, 182, 0.6);
-      transform: translatey(0px);
-    }
-  }
+
 
   /*SocietyBackGroundImage animation*/
   .aboutUsH {
@@ -54,39 +41,30 @@
     width: 100%;
 }
 
-  @-webkit-keyframes puff-in-center {
-    0% {
-      -webkit-transform: scale(2);
-              transform: scale(2);
-      -webkit-filter: blur(4px);
-              filter: blur(4px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      -webkit-filter: blur(0px);
-              filter: blur(0px);
-      opacity: 1;
-    }
-  }
-  @keyframes puff-in-center {
-    0% {
-      -webkit-transform: scale(2);
-              transform: scale(2);
-      -webkit-filter: blur(4px);
-              filter: blur(4px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      -webkit-filter: blur(0px);
-              filter: blur(0px);
-      opacity: 1;
-    }
-  }
 
+
+  .image.scoietyWork {
+    border: 2px solid #000;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: moveUpDown 3s ease-in-out infinite; /* Adjust the duration and animation type as needed */
+  }
+  
+  @keyframes moveUpDown {
+    0%, 100% {
+      transform: translateY(0); /* Start and end position (no movement) */
+    }
+    50% {
+      transform: translateY(-20px); /* Move up by 10 pixels at 50% of the animation */
+    }
+  }
+  
+  /* Optional: Add styles to make the border and border-radius change on hover */
+  .image.scoietyWork:hover {
+    border-color: #fff;
+    transform: scale(1.05) translateY(0); /* Stop the up-and-down movement on hover */
+    animation: none; /* Stop the movement on hover */
+  }
 
 /*Animate Text*/
 .SocietyBackGroundT{
@@ -94,30 +72,6 @@
 	        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
-@-webkit-keyframes tracking-in-expand {
-  0% {
-    letter-spacing: -0.5em;
-    opacity: 0;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes tracking-in-expand {
-  0% {
-    letter-spacing: -0.5em;
-    opacity: 0;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 /*Background for soceity*/
 .SocietyBackGround{background-color: #8EC5FC;
 background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
@@ -131,89 +85,58 @@ background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
 }
 /* ///////////////////////////////////////////////////////////////// */
 /* tools section */
-.tools-section {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-}
-
-.tool-box {
-  text-align: center;
-  background-color: #f0f0f0;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.tool-icon {
-  font-size: 2em;
-  color: #007bff;
-}
-
-.tool-label {
-  margin-top: 10px;
-  font-size: 1.2em;
-}
-
-
-/*Baclground for footer*/
-.footer{
-}
-
-/* Style for tool boxes */
-.toolsheading {
-  color: #fff;
-  font-size: 2.5em;
-  text-align: center;
-  padding: 30px;
-}
-
-.tool-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  margin: 10px;
-  transition: transform 0.3s ease-in-out;
-  height: 150px; /* Set a fixed height for all tool boxes */
-  width: 150px
-}
-
-.tool-box:hover {
-  transform: scale(1.05);
-}
-
-/* Style for tool icons */
-.tool-icon {
-  font-size: 46px; /* Increased icon size */
-  margin-bottom: 10px;
-}
-
-/* Style for tool labels */
-.tool-label {
-  text-align: center;
-  font-size: 18px; /* Increased label size */
-}
-
-/* Responsive design for tool boxes */
-@media (max-width: 768px) {
-  .tools-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    /* Style for tools section */
+    .tools-section {
+      display:flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 10px;
   }
 
+  /* Style for individual tool boxes */
   .tool-box {
-    flex: 1 0 40%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 5px;
+      transition: transform 0.3s ease-in-out;
+      height: 150px; /* Set a fixed height for all tool boxes */
+      width: 150px;
+      background-color: #f0f0f0;
+      border: 2px solid #007bff;
   }
-}
 
+  /* Hover effect for tool boxes */
+  .tool-box:hover {
+      transform: scale(1.05);
+  }
 
+  /* Style for tool icons */
+  .tool-icon {
+      font-size: 40px; /* Slightly smaller icon size */
+      color: #007bff;
+      margin-bottom: 10px;
+  }
 
+  /* Style for tool labels */
+  .tool-label {
+      text-align: center;
+      font-size: 12px; /* Smaller label size */
+      padding: 5px; /* Added padding */
+  }
 
+  /* Responsive design for tool boxes */
+  @media (max-width: 768px) {
+      .tools-section {
+          justify-content: center;
+      }
 
+      .tool-box {
+          flex: 1 0 40%;
+      }
+  }
