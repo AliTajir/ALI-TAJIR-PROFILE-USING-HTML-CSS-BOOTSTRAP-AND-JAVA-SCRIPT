@@ -56,6 +56,12 @@
               transform: translateY(0);
           }
       }
+      /* Active category link style */
+      .nav-link.active {
+        background-color: #28a745;
+        color: #fff;
+        border-radius: 5px;
+      }
 
     
 
@@ -181,9 +187,6 @@ document.addEventListener('DOMContentLoaded', function () {
                   <br>
                     <h1 class="text-lg-left" data-aos="fade-right-up">Personalized Experience</h1>
                     <h3 style="text-align:left;">Customers expect companies to understand their unique tastes and preferences and engage them as individuals rather than customer types or segments.</h3>
-                    <br>
-                    <h1 class="text-lg-left" data-aos="fade-right-up">Personalized Experience</h1>
-                    <h3 style="text-align:left;">Customers expect companies to understand their unique tastes and preferences and engage them as individuals rather than customer types or segments.</h3>
                 </div>
             </div>
         </div>
@@ -191,37 +194,36 @@ document.addEventListener('DOMContentLoaded', function () {
      <br>
      <br>
      <br>
-
 <!-- Category tabs -->
 <div class="container mt-3 mb-3">
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-        <a class="nav-link active" data-category="all" onclick="filterImages('all')">All</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-category="sketches" onclick="filterImages('sketches')">Sketches</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-category="digital" onclick="filterImages('digital')">Digital</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-category="animation" onclick="filterImages('animation')">Animation</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-category="painting" onclick="filterImages('painting')">Painting</a>
-      </li>
-      <!-- Add more categories as needed -->
-    </ul>
+  <ul class="nav nav-pills" id="categoryTabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-category="all" onclick="filterImages('all', this)">All</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-category="sketches" onclick="filterImages('sketches', this)">Sketches</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-category="digital" onclick="filterImages('digital', this)">Digital</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-category="animation" onclick="filterImages('animation', this)">Animation</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-category="painting" onclick="filterImages('painting', this)">Painting</a>
+    </li>
+    <!-- Add more categories as needed -->
+  </ul>
+</div>
+
+<!-- ART gallery -->
+<section class="ArtSketches container">
+  <div class="row" id="artGallery">
+    <!-- Dynamic cards will be added here -->
   </div>
-  
-  <!-- ART gallery -->
-  <section class="ArtSketches container">
-    <div class="row" id="artGallery">
-        <!-- Dynamic cards will be added here -->
-    </div>
-  </section>
-  
-  <script>
+</section>
+
+<script>
     // Array of picture objects with category information
     const pictures = [
       { category: 'sketches', link: '../pictures/myart/65423.jpg' },
@@ -231,57 +233,65 @@ document.addEventListener('DOMContentLoaded', function () {
       // Add more picture objects with category information as needed
     ];
   
-    // Reference to the gallery container
-    const galleryContainer = document.getElementById('artGallery');
-  
-    // Function to filter images based on category
-    function filterImages(category) {
-      // Clear existing images in the gallery
-      galleryContainer.innerHTML = '';
-  
-      // Filter images based on the selected category
-      const filteredPictures = (category === 'all') ? pictures : pictures.filter(pic => pic.category === category);
-  
-      // Create cards for the filtered images
-      filteredPictures.forEach((picture, index) => {
-        // Create a card element
-        const card = document.createElement('div');
-        card.className = 'col-12 col-sm-6 col-md-4 col-lg-3 mb-4';
-  
-        // Create an anchor element for lightbox
-        const anchor = document.createElement('a');
-        anchor.href = picture.link;
-        anchor.setAttribute('data-lightbox', 'gallery');
-        anchor.setAttribute('data-title', `Sketch ${index + 1}`);
-  
-        // Create the card content
-        const cardContent = `
-            <div class="card">
-                <img src="${picture.link}" alt="${picture.category} Sketch ${index + 1}" class="card-img-top">
-                <div class="card-body">
-                    <h3 class="card-title">${picture.category.charAt(0).toUpperCase() + picture.category.slice(1)} Sketch ${index + 1}</h3>
-                    <!-- Additional content as needed -->
-                </div>
-            </div>
-        `;
-  
-        // Set the card content inside the anchor element
-        anchor.innerHTML = cardContent;
-  
-        // Append the anchor element to the card
-        card.appendChild(anchor);
-  
-        // Append the card to the gallery container
-        galleryContainer.appendChild(card);
-      });
-    }
-  
-    // Initial load: Show all images
-    filterImages('all');
-  </script>
+  // Reference to the gallery container
+  const galleryContainer = document.getElementById('artGallery');
+
+  // Function to filter images based on category
+  function filterImages(category, tab) {
+    // Clear existing images in the gallery
+    galleryContainer.innerHTML = '';
+
+    // Remove the 'active' class from all category tabs
+    document.querySelectorAll('#categoryTabs .nav-link').forEach(link => {
+      link.classList.remove('active');
+    });
+
+    // Add the 'active' class to the clicked category tab
+    tab.classList.add('active');
+
+    // Filter images based on the selected category
+    const filteredPictures = (category === 'all') ? pictures : pictures.filter(pic => pic.category === category);
+
+    // Create cards for the filtered images
+    filteredPictures.forEach((picture, index) => {
+      // Create a card element
+      const card = document.createElement('div');
+      card.className = 'col-12 col-sm-6 col-md-4 col-lg-3 mb-4';
+
+      // Create an anchor element for lightbox
+      const anchor = document.createElement('a');
+      anchor.href = picture.link;
+      anchor.setAttribute('data-lightbox', 'gallery');
+      anchor.setAttribute('data-title', `Sketch ${index + 1}`);
+
+      // Create the card content
+      const cardContent = `
+          <div class="card">
+              <img src="${picture.link}" alt="${picture.category} Sketch ${index + 1}" class="card-img-top">
+              <div class="card-body">
+                  <h3 class="card-title">${picture.category.charAt(0).toUpperCase() + picture.category.slice(1)} Sketch ${index + 1}</h3>
+                  <!-- Additional content as needed -->
+              </div>
+          </div>
+      `;
+
+      // Set the card content inside the anchor element
+      anchor.innerHTML = cardContent;
+
+      // Append the anchor element to the card
+      card.appendChild(anchor);
+
+      // Append the card to the gallery container
+      galleryContainer.appendChild(card);
+    });
+  }
+
+  // Initial load: Show all images
+  filterImages('all', document.querySelector('#categoryTabs .nav-link.active'));
+</script>
 
    </main>
-
+   <hr class="lineG" data-aos="flip-up">
 
 <!-- Footer -->
 <footer class="footer container-fluid">

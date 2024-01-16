@@ -162,31 +162,38 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    <section class="SocietyBackGround">
-      <div class="container px-7 py-5 text-center">
-          <h1 padding="50px" class="aboutUsH" data-aos="fade-down">About Me</h1>
-          <div class="row g-4 py-5 row-cols-1 row-cols-sm-1 row-cols-lg-2">
-              <div class="col">
-                  <img class="image SocietyBackGroundI scoietyWork1" src="../Pictures/IMG_8444.PNG" style="width: 80%;height:100% ">
-              </div>
-              <div class="col SocietyBackGroundT">
-                <br>
-                <br>
-                  <h1 class="text-lg-left" data-aos="fade-right-up">Personalized Experience</h1>
-                  <h3 style="text-align:left;">Customers expect companies to understand their unique tastes and preferences and engage them as individuals rather than customer types or segments.</h3>
-                  <br>
-                  <br>
-                  <h1 class="text-lg-left" data-aos="fade-right-up">Personalized Experience</h1>
-                  <h3 style="text-align:left;">Customers expect companies to understand their unique tastes and preferences and engage them as individuals rather than customer types or segments.</h3>
-                  <br>
-                  <br>
-                  <h1 class="text-lg-left" data-aos="fade-right-up">Personalized Experience</h1>
-                  <h3 style="text-align:left;">Customers expect companies to understand their unique tastes and preferences and engage them as individuals rather than customer types or segments.</h3>
-
-              </div>
+    <section class="SocietyBackGround mt-0">
+      <div class="container px-5 py-0 text-center">
+        <div class="row g-4 py-5">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h1 class="aboutUsH" data-aos="fade-down">About Me</h1>
+            <h3 class="mb-4" data-aos="fade-right-up">Personalized Experience</h3>
+            <p class="lead" data-aos="fade-right-up">
+              Customers today expect a unique and tailored experience. I believe in understanding individual tastes and preferences to engage customers on a personal level.
+            </p>
+            <h3 class="mb-4" data-aos="fade-right-up">Innovative Solutions</h3>
+            <p class="lead" data-aos="fade-right-up">
+              Embracing innovation is key. I strive to provide creative solutions that address the unique challenges and needs of each individual, making their experience exceptional.
+            </p>
           </div>
+          <div class="col-md-4">
+            <img class="img-fluid rounded SocietyBackGroundI" src="../Pictures/IMG_8444.PNG" alt="About Me Image" data-aos="fade-right-up" style="max-width: 75%;">
+          </div>
+          <div class="col-md-4 SocietyBackGroundT text-start">
+            <h3 class="mb-4" data-aos="fade-right-up">My Journey</h3>
+            <p class="lead" data-aos="fade-right-up">
+              Let me take you on a journey through my experiences and skills. I am passionate about delivering exceptional results and making a positive impact. Join me on this exciting adventure!
+            </p>
+            <h3 class="mb-4" data-aos="fade-right-up">Passion for Excellence</h3>
+            <p class="lead" data-aos="fade-right-up">
+              My commitment to excellence drives me to continuously improve and deliver the highest quality. I am dedicated to exceeding expectations and achieving outstanding results.
+            </p>
+          </div>
+        </div>
       </div>
-  </section>
+    </section>
+    
+    
   
      <hr class="lineG" data-aos="flip-up">
 
@@ -332,27 +339,35 @@ document.addEventListener('DOMContentLoaded', function () {
   const toolsSection = document.getElementById('toolsSection');
 
   function filterTools(category) {
+    // Remove the 'active' class from all category links
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.classList.remove('active');
+    });
+  
+    // Add the 'active' class to the clicked category link
+    document.querySelector(`[data-category="${category}"]`).classList.add('active');
+  
     toolsSection.innerHTML = '';
-
+  
     const filteredTools = (category === 'all') ? tools : tools.filter(tool => tool.category === category);
-
+  
     filteredTools.forEach(tool => {
       const toolBox = document.createElement('div');
-      toolBox.className = 'col-6 col-sm-3 col-md-2 col-lg-2 mb-2'; // Adjust the column classes here
-
+      toolBox.className = 'col-6 col-sm-3 col-md-2 col-lg-2'; // Adjust the column classes here
+  
       const toolBoxContent = `
         <div class="tool-box">
           <i class="${tool.iconClass} fa-2x"></i>
           <h6 class="tool-name">${tool.name}</h6>
         </div>
       `;
-
+  
       toolBox.innerHTML = toolBoxContent;
       toolsSection.appendChild(toolBox);
     });
   }
-
-  filterTools('all');
+  
+  filterTools('coding');
 </script>
 
  
@@ -364,7 +379,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-   <hr class="lineF">
+ 
 <!-- Footer -->
 <footer class="footer container-fluid">
   <div class="space">

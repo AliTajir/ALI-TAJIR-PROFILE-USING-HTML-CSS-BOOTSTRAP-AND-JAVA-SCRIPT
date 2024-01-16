@@ -33,12 +33,17 @@
 
 /* Adjusted image display */
 .SocietyBackGroundI {
-    border-radius: 50px;
-    border: 2px;
-    box-shadow: 0px 5px 5px 2px bisque;
-    -webkit-animation: puff-in-center 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-    animation: puff-in-center 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-    width: 100%;
+  max-width: 100%; /* Adjust the maximum width as needed */
+  height: auto; /* Maintain the aspect ratio */
+  border-radius: 20px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow */
+  border: 2px solid #ffffff;
+}
+
+/* Optional: Add hover effect */
+.SocietyBackGroundI:hover {
+  transform: scale(2.05); /* Increase scale on hover */
+  transition: transform 0.3s ease; /* Smooth transition effect */
 }
 
 
@@ -84,59 +89,70 @@ background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
 
 }
 /* ///////////////////////////////////////////////////////////////// */
-/* tools section */
-    /* Style for tools section */
-    .tools-section {
-      display:flex;
-      justify-content: space-around;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 10px;
+.toolsheading {
+  color: #fff;
+  font-size: 2.5em;
+  text-align: center;
+  padding: 30px;
+}
+
+.tools-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px; /* Adjust the gap as needed */
+  padding: 10px;
+  margin: 25px;
+  
+}
+
+.tool-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px; /* Adjust the padding as needed */
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  height: 150px;
+  width: 150px;
+  background-color: #f0f0f0;
+  border: 2px solid #007bff;
+}
+
+.tool-box:hover {
+  transform: scale(1.10);
+  z-index: 1;
+  background-color: #007bff;
+  border: 2px solid #ff0000;
+}
+
+.tool-icon {
+  font-size: 40px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.tool-label {
+  text-align: center;
+  font-size: 12px;
+  padding: 5px;
+}
+
+@media (max-width: 768px) {
+  .tools-section {
+    justify-content: center;
   }
 
-  /* Style for individual tool boxes */
   .tool-box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 10px;
-      border-radius: 10px;
-      margin-bottom: 5px;
-      transition: transform 0.3s ease-in-out;
-      height: 150px; /* Set a fixed height for all tool boxes */
-      width: 150px;
-      background-color: #f0f0f0;
-      border: 2px solid #007bff;
+    flex: 1 0 40%;
   }
+}
 
-  /* Hover effect for tool boxes */
-  .tool-box:hover {
-      transform: scale(1.05);
-  }
-
-  /* Style for tool icons */
-  .tool-icon {
-      font-size: 40px; /* Slightly smaller icon size */
-      color: #007bff;
-      margin-bottom: 10px;
-  }
-
-  /* Style for tool labels */
-  .tool-label {
-      text-align: center;
-      font-size: 12px; /* Smaller label size */
-      padding: 5px; /* Added padding */
-  }
-
-  /* Responsive design for tool boxes */
-  @media (max-width: 768px) {
-      .tools-section {
-          justify-content: center;
-      }
-
-      .tool-box {
-          flex: 1 0 40%;
-      }
-  }
+/* Active category link style */
+.nav-link.active {
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 5px;
+}

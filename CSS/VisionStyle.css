@@ -74,27 +74,31 @@
   height: 100%;
   padding: 20px; /* Add padding to the card body */
   text-align: center; /* Center-align text in the card body */
-  height: 250px;
+  height: 150px;
   background-color: cornflowerblue;
+ 
 }
 
 .blog-card .card-title {
   font-size: 1.8em; /* Increase the font size of the title */
-  margin-bottom: 10px; /* Add margin at the bottom of the title */
+  margin-bottom: 5px; /* Add margin at the bottom of the title */
   color: #333; /* Change the title color */
   text-align: center; /* Center-align the title */
 }
 
 .blog-card .card-text {
-  color: #666; /* Change the text color */
-  text-align: center; /* Center-align the text */
+  color: #666;
+  text-align: center;
+  overflow: hidden;
+
+  
+  max-height: 3.6em; /* Set maximum height to show 3 lines of text */
 }
 
 .blog-card .btn-primary,
 .blog-card .btn-secondary {
     align-self: center; /* Align both buttons to the center */
     margin-top: 10px; /* Add margin at the top of the buttons */
-
 }
 
 .blog-card .btn-primary {

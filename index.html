@@ -238,24 +238,24 @@
 
 <!-- Category tabs for projects -->
 <div class="container mt-3 mb-3">
-  <ul class="nav nav-pills">
+  <ul class="nav nav-pills" id="projectTabs">
     <li class="nav-item">
-      <a class="nav-link active" data-category="all" onclick="filterProjects('all')">All</a>
+      <a class="nav-link active" data-category="all" onclick="filterProjects('all', this)">All</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-category="coding" onclick="filterProjects('coding')">Coding</a>
+      <a class="nav-link" data-category="coding" onclick="filterProjects('coding', this)">Coding</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-category="art" onclick="filterProjects('art')">Art</a>
+      <a class="nav-link" data-category="art" onclick="filterProjects('art', this)">Art</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-category="opensource" onclick="filterProjects('opensource')">Open Source</a>
+      <a class="nav-link" data-category="opensource" onclick="filterProjects('opensource', this)">Open Source</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-category="entertainment" onclick="filterProjects('entertainment')">Entertainment</a>
+      <a class="nav-link" data-category="entertainment" onclick="filterProjects('entertainment', this)">Entertainment</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-category="work" onclick="filterProjects('work')">Work</a>
+      <a class="nav-link" data-category="work" onclick="filterProjects('work', this)">Work</a>
     </li>
     <!-- Add more categories as needed -->
   </ul>
@@ -341,7 +341,7 @@
     {
       title: 'Project Title 8',
       image: './pictures/logo.jpg',
-      description: 'Another short description of the second entertainment project.',
+      description: 'Another short description of the second entertainment project sdcbsdlaksndasnbcca scusahd ashodiahdsaodasdhasdasdhaodas bdha svsdashd dasdhoadasdhoasdoiahadhsahdkasndjadashdahiodasdash.',
       content: 'Full content of Entertainment Project 2 goes here...',
       category: 'entertainment',
     },
@@ -351,59 +351,68 @@
     // Add more projects as needed
   ];
 
-    // Reference to the project list container
-    const projectListContainer = document.getElementById('blogList');
+  // Reference to the project list container
+  const projectListContainer = document.getElementById('blogList');
 
-    // Function to filter projects based on category
-    function filterProjects(category) {
-      projectListContainer.innerHTML = '';
-  
-      const filteredProjects = (category === 'all') ? projectData : projectData.filter(project => project.category === category);
-  
-      filteredProjects.forEach((project, index) => {
-        const projectElement = document.createElement('div');
-        projectElement.className = 'col mb-4';
-  
-        const projectCardContent = `
-          <div class="card blog-card">
-            <img src="${project.image}" class="card-img-top" alt="${project.title}">
-            <div class="card-body">
-              <h5 class="card-title">${project.title}</h5>
-              <p class="card-text">${project.description}</p>
-            </div>
-            <div class="card-footer">
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#blogModal" onclick="loadFullProject(${index})">
-                Read More
-              </button>
-              <a onclick="EventPage()" class="btn btn-secondary ms-2" role="button">Visit Project</a>
-            </div>
+  // Function to filter projects based on category
+  function filterProjects(category, tab) {
+    projectListContainer.innerHTML = '';
+
+    // Remove the 'active' class from all project tabs
+    document.querySelectorAll('#projectTabs .nav-link').forEach(link => {
+      link.classList.remove('active');
+    });
+
+    // Add the 'active' class to the clicked project tab
+    tab.classList.add('active');
+
+    const filteredProjects = (category === 'all') ? projectData : projectData.filter(project => project.category === category);
+
+    filteredProjects.forEach((project, index) => {
+      const projectElement = document.createElement('div');
+      projectElement.className = 'col mb-4';
+
+      const projectCardContent = `
+        <div class="card blog-card">
+          <img src="${project.image}" class="card-img-top" alt="${project.title}">
+          <div class="card-body">
+            <h5 class="card-title">${project.title}</h5>
+            <p class="card-text">${project.description}</p>
           </div>
-        `;
-  
-        projectElement.innerHTML = projectCardContent;
-        projectListContainer.appendChild(projectElement);
-      });
-    }
-  
-    // Function to load full project content into the modal
-    function loadFullProject(index) {
-      const fullProjectContent = document.getElementById('blogContent');
-      const project = projectData[index];
-      fullProjectContent.innerHTML = `
-        <h2>${project.title}</h2>
-        <img src="${project.image}" class="img-fluid mb-3" alt="${project.title}">
-        <p>${project.content}</p>
+          <div class="card-footer">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#blogModal" onclick="loadFullProject(${index})">
+              Read More
+            </button>
+            <a onclick="EventPage()" class="btn btn-secondary ms-2" role="button">Visit Project</a>
+          </div>
+        </div>
       `;
-    }
-  
-    // Function to close the modal
-    function closeModal() {
-      $('#blogModal').modal('hide');
-    }
-  
-    // Call the filterProjects function with 'all' category when the page loads
-    filterProjects('all');
-  </script>
+
+      projectElement.innerHTML = projectCardContent;
+      projectListContainer.appendChild(projectElement);
+    });
+  }
+
+  // Function to load full project content into the modal
+  function loadFullProject(index) {
+    const fullProjectContent = document.getElementById('blogContent');
+    const project = projectData[index];
+    fullProjectContent.innerHTML = `
+      <h2>${project.title}</h2>
+      <img src="${project.image}" class="img-fluid mb-3" alt="${project.title}">
+      <p>${project.content}</p>
+    `;
+  }
+
+  // Function to close the modal
+  function closeModal() {
+    $('#blogModal').modal('hide');
+  }
+
+  // Call the filterProjects function with 'all' category when the page loads
+  filterProjects('all', document.querySelector('#projectTabs .nav-link.active'));
+</script>
+
 
   
 
@@ -420,7 +429,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
+ 
 
 <!-- Footer -->
 <footer class="footer container-fluid">
