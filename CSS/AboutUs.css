@@ -29,6 +29,8 @@
   .aboutUsH {
     color: #fff;
     font-size: 2.5em;
+    background-color: #32354c;
+    border-radius: 15px;
 }
 
 /* Adjusted image display */
@@ -139,6 +141,7 @@ background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
   font-size: 12px;
   padding: 5px;
 }
+
 
 @media (max-width: 768px) {
   .tools-section {

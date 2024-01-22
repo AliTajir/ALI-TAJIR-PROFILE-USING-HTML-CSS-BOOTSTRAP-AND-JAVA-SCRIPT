@@ -16,13 +16,23 @@
   display: inline-flex;
 }
 .text-lg {
-  text-align: center;
+  text-align: left;
+  margin-left: 7%;
   margin-top: 0px; /* Adjust the margin-top as needed */
-  margin-bottom: 50px; /* Adjust the margin-bottom as needed */
+  margin-bottom: 20px; /* Adjust the margin-bottom as needed */
+  color: rgb(253, 253, 253); /* Set the text color to white */
+}
+.text-lgg {
+  text-align: left;
+  margin-left: 7%;
+  margin-top: 0px; /* Adjust the margin-top as needed */
+  
   color: rgb(253, 253, 253); /* Set the text color to white */
 }
 .space {
-  padding: 60px;
+  padding: 20px;
+  margin-left: 0px;
+  margin-top: 120px;
 }
 
 .iconsFooter a {

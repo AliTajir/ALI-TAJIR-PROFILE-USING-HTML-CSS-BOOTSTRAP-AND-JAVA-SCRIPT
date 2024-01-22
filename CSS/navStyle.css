@@ -58,7 +58,7 @@ body {
 }
 
 .btnN-white::after {
-    background-color: #695E93;
+    background-color: none;
 }
 
 .btnN:hover::after {

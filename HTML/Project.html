@@ -17,7 +17,7 @@
     <link href="../CSS/Mission.css" rel="styleSheet"></link>
     <link href="../CSS/slideShowStyle.css" rel="styleSheet"></link>
     <link href="../CSS/Name.css" rel="stylesheet">
-    <link href="../CSS/Event.css" rel="styleSheet"></link>
+    <link href="../CSS/Project.css" rel="styleSheet"></link>
     <!--Fir the animation in the website-->
     <link href="../CSS/Animation.css" rel="styleSheet"></link>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <!--Title and Logo-->
     <title>Ali Tajir Profile</title>
-    <link rel = "icon" class="rounded-4" href ="../Pictures/logo.jpg" type = "image/x-icon">
+    <link rel="icon" class="rounded-4" href="../Pictures/top.jpg" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <span>
           <img src="../Pictures/icons8-home-page-64.png" height="20px"/>
       </span>Home</a></li>
-  <li><a class="nav-link mb-1 px-2 text-secondary btnN btnN-white btnN-animate" onclick="EventPage()">
+  <li><a class="nav-link mb-1 px-2 text-secondary btnN btnN-white btnN-animate" onclick="ProjectPage()">
       <span>
           <img src="../Pictures/icons8-event-accepted-64.png" height="20px"/>
       </span>Projects</a></li>
@@ -150,9 +150,9 @@ document.addEventListener('DOMContentLoaded', function () {
       <span>
           <img src="../Pictures/icons8-about-64.png" height="20px"/>
       </span>About Me</a></li>
-    <li><a class="nav-link px-2 text-secondary btnN btnN-white btnN-animate" onclick="TeamPage()">
+    <li><a class="nav-link px-2 text-secondary btnN btnN-white btnN-animate" onclick="MyartPage()">
       <span>
-          <img src="../Pictures/icons8-team-64.png" height="20px"/>
+        <img src="../Pictures/pngwing.com.png" height="20px"/>
       </span>My Art</a></li>
   </ul>
 </div>
@@ -381,8 +381,11 @@ document.addEventListener('DOMContentLoaded', function () {
 <!-- Footer -->
 <footer class="footer container-fluid">
   <div class="space">
-      <h1 class="text-lg" >Social Media</h1>
-      <h1 class="text-lg" >Contact Information</h1>
+    <h1 class="text-lg" >Social Media</h1>
+    <h1 class="text-lg" >Contact Information</h1>
+    <h5 class="text-lgg" >Follow me on linkedin</h5>
+    <h5 class="text-lgg" >Follow me on linkedin</h5>
+    <h5 class="text-lgg" >Follow me on linkedin</h5>
   </div>
     <hr class="lineF">
     <section class="pr-lg-4" style="height: 120px;">
@@ -390,7 +393,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <div class="row row-cols-1 row-cols-lg-6 row-cols-md-2
           row-cols-sm-2 iconsFooter pl-2">
           <div class="col fa">
-          <a href="#" class="mb-3">
+          <a href="https://www.facebook.com/ali.tajir.7543?mibextid=ZbWKwL" target="_blank" class="mb-3">
              <div class="layer">
                 <span></span>
                 <span></span>
@@ -404,7 +407,7 @@ document.addEventListener('DOMContentLoaded', function () {
           </a>
           </div>
           <div class="col tw">
-          <a href="#" class="mb-3">
+          <a href="https://x.com/nonetnv?t=QBC2LCOv_HW8BPuo5Piy5g&s=08" target="_blank" class="mb-3">
              <div class="layer">
                 <span></span>
                 <span></span>
@@ -418,7 +421,7 @@ document.addEventListener('DOMContentLoaded', function () {
           </a>
           </div>
           <div class="col inst">
-          <a href="#" class="mb-3">
+          <a href="https://www.instagram.com/alitajir_?utm_source=qr&igsh=MWxpZ2FydjdnbHA0ag==" target="_blank" class="mb-3">
              <div class="layer">
                 <span></span>
                 <span></span>
@@ -432,7 +435,7 @@ document.addEventListener('DOMContentLoaded', function () {
           </a>
           </div>
           <div class="col li">
-          <a href="https://www.linkedin.com/in/ali-tajir-a464891b8/" class="mb-3">
+          <a href="https://www.linkedin.com/in/ali-tajir-a464891b8/" target="_blank" class="mb-3">
              <div class="layer">
                 <span></span>
                 <span></span>
@@ -446,7 +449,7 @@ document.addEventListener('DOMContentLoaded', function () {
           </a>
           </div>
           <div class="col em">
-          <a href="#" class="mb-3">
+          <a href="https://mail.google.com/mail/?view=cm&to=alitaji32@gmail.com" target="_blank" class="mb-3">
            <div class="layer">
               <span></span>
               <span></span>
@@ -460,7 +463,7 @@ document.addEventListener('DOMContentLoaded', function () {
           </a>
           </div>                    
           <div class="col git">
-              <a href="https://github.com/AliTajir" class="mb-3">
+              <a href="https://github.com/AliTajir" target="_blank" class="mb-3">
                   <div class="layer">
                       <span></span>
                       <span></span>
@@ -480,15 +483,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
    </section>
   </footer>
-
     <!--JavaScript Link to assests folder and access scoucres-->
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       function IndexPage(){location.replace("../index.html")}
-      function EventPage(){location.replace("./Event.html")}
+      function ProjectPage(){location.replace("./Project.html")}
       function BlogPage(){location.replace("./Blog.html")}
       function AboutUsPage(){location.replace("./AboutUs.html")}
-      function TeamPage(){location.replace("./Team.html")}
+      function MyartPage(){location.replace("./Myart.html")}
     </script>
    <!--For Animation-->
    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
